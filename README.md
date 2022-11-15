@@ -10,15 +10,7 @@ This standard is derived from https://github.com/Allar/ue5-style-guide.
 The word 'map' generally refers to what the average person calls a 'level' and may be used interchangeably. See this term's history [here](https://en.wikipedia.org/wiki/Level_(video_gaming)).
 
 
-# 00. Globally Enforced Opinions
-
-@TODO: Make this section 1 and update this document accordingly. Or maybe we don't?
-
-
-## 00.1 Forbidden Characters
-
-
-### Identifiers
+# 0. Identifiers
 
 In any `Identifier` of any kind, **never** use the following unless absolutely forced to:
 
@@ -299,8 +291,6 @@ Packing 4 channels of data into a texture (RGBA) is not recommended except for a
 | Particle System         | PS_        |            |                                  |
 | Material (Post Process) | PP_        |            |                                  |
 
-**[⬆ Back to Top](#table-of-contents)**
-
 
 
 # 2. Content Directory Structure
@@ -542,9 +532,6 @@ If you find that the content browser has an empty folder you can't delete, you s
 1. Open the editor. Confirm everything still works as expected. If it doesn't, revert, figure out what went wrong, and try again.
 1. Ensure the folder is now gone.
 1. Submit changes to source control.
-
-**[⬆ Back to Top](#table-of-contents)**
-
 
 
 
@@ -1025,10 +1012,6 @@ This does not mean every cast node should have its failure handled. In many case
 
 All nodes in all blueprint graphs must have a purpose. You should not leave dangling blueprint nodes around that have no purpose or are not executed.
 
-**[⬆ Back to Top](#table-of-contents)**
-
-
-
 
 
 # 4. Static Meshes
@@ -1079,10 +1062,6 @@ Regardless of whether an asset is going to be used for collision in a level, all
 
 This is a subjective check on a per-project basis, however all assets should be scaled correctly to their project. Level designers or blueprint authors should not have to tweak the scale of meshes to get them to confirm in the editor. Scaling meshes in the engine should be treated as a scale override, not a scale correction.
 
-**[⬆ Back to Top](#table-of-contents)**
-
-
-
 
 
 # 5. Niagara
@@ -1096,11 +1075,6 @@ This section will focus on Niagara assets and their internals.
 As mentioned in [00.1 Forbidden Identifiers](#00), spaces and all white space characters are forbidden in identifiers. This is especially true for Niagara systems as it makes working with things significantly harder if not impossible when working with HLSL or other means of scripting within Niagara and trying to reference an identifier.
 
 (Original Contribution by [@dunenkoff](https://github.com/Allar/ue5-style-guide/issues/58))
-
-
-**[⬆ Back to Top](#table-of-contents)**
-
-
 
 
 
@@ -1157,9 +1131,6 @@ If your project contains assets that should be demoed or come with some sort of 
 If your project is a gameplay mechanic or other form of system as opposed to an art pack, this can be the same as your "Overview" map.
 
 For example, `InteractionComponent_Overview_Demo`, `ExplosionKit_Demo`.
-
-**[⬆ Back to Top](#table-of-contents)**
-
 
 
 
