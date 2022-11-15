@@ -304,6 +304,7 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
 
 ## 2e1 Example Project Content Structure
 
+```
 |-- Content
     |-- GenericShooter
         |-- Art
@@ -353,7 +354,7 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
             |   |-- DesertEagle
             |   |-- RocketPistol
             |-- Rifles
-
+```
 
 The reasons for this structure are listed in the following sub-sections.
 
