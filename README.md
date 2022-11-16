@@ -5,12 +5,12 @@ This standard is derived from https://github.com/Allar/ue5-style-guide.
 # Important Terminology
 
 
-#### Levels/Maps
+#### Levels/Maps {#terms-level-map}
 
 The word 'map' generally refers to what the average person calls a 'level' and may be used interchangeably. See this term's history [here](https://en.wikipedia.org/wiki/Level_(video_gaming)).
 
 
-# 0. Identifiers
+# 0. Identifiers {#0}
 
 In any `Identifier` of any kind, **never** use the following unless absolutely forced to:
 
@@ -38,7 +38,7 @@ Most things are prefixed with prefixes being generally an acronym of the asset t
 
 
 
-## 1.1 Base Asset Name - `Prefix_BaseAssetName_Variant_Suffix`
+## 1.1 Base Asset Name - `Prefix_BaseAssetName_Variant_Suffix` {#base-asset-name}
 
 All assets should have a _Base Asset Name_. A Base Asset Name represents a logical grouping of related assets. Any asset that is part of this logical group should follow the standard of  `Prefix_BaseAssetName_Variant_Suffix`.
 
@@ -79,7 +79,7 @@ Depending on how your asset variants are made, you can chain together variant na
 
 
 
-## 1.2 Asset Name Modifiers
+## 1.2 Asset Name Modifiers #asset-name-modifiers
 
 When naming an asset, use these tables to determine the prefix and suffix to use with an asset's [Base Asset Name](#base-asset-name).
 
@@ -172,7 +172,7 @@ When naming an asset, use these tables to determine the prefix and suffix to use
 
 
 
-## 1.2.6 Textures
+## 1.2.6 Textures {#anc-textures}
 
 | Asset Type              | Prefix     | Suffix     | Notes                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
@@ -196,7 +196,7 @@ When naming an asset, use these tables to determine the prefix and suffix to use
 
 
 
-### 1.2.6.1 Texture Packing
+### 1.2.6.1 Texture Packing {#anc-textures-packing}
 It is common practice to pack multiple layers of texture data into one texture. An example of this is packing Emissive, Roughness, Ambient Occlusion together as the Red, Green, and Blue channels of a texture respectively. To determine the suffix, simply stack the given suffix letters from above together, e.g. `_ERO`.
 
 > It is generally acceptable to include an Alpha/Opacity layer in your Diffuse/Albedo's alpha channel and as this is common practice, adding `A` to the `_D` suffix is optional.
@@ -299,7 +299,7 @@ Equally important as asset names, the directory structure style of a project sho
 
 There are multiple ways to lay out the content of a UE4 project. In this style, we will be using a structure that relies more on filtering and search abilities of the Content Browser for those working with assets to find assets of a specific type instead of another common structure that groups asset types with folders.
 
-> If you are using the prefix [naming convention](#1.2) above, using folders to contain assets of similar types such as `Meshes`, `Textures`, and `Materials` is a redundant practice as asset types are already both sorted by prefix as well as able to be filtered in the content browser.
+> If you are using the prefix [naming convention](#asset-name-modifiers) above, using folders to contain assets of similar types such as `Meshes`, `Textures`, and `Materials` is a redundant practice as asset types are already both sorted by prefix as well as able to be filtered in the content browser.
 
 
 ## 2e1 Example Project Content Structure
@@ -365,14 +365,12 @@ The reasons for this structure are listed in the following sub-sections.
 These are common rules for naming any folder in the content structure.
 
 
-### 2.1.1 Always Use PascalCase[*](#terms-cases)
+### 2.1.1 Always Use PascalCase {#2.1.1}
 
 PascalCase refers to starting a name with a capital letter and then instead of using spaces, every following word also starts with a capital letter. For example, `DesertEagle`, `RocketPistol`, and `ASeriesOfWords`.
 
-See [Cases](#terms-cases).
 
-
-### 2.1.2 Never Use Spaces
+### 2.1.2 Never Use Spaces {#2.1.2}
 
 Re-enforcing [2.1.1](#2.1.1), never use spaces. Spaces can cause various engineering tools and batch processes to fail. Ideally, your project's root also contains no spaces and is located somewhere such as `D:\Project` instead of `C:\Users\My Name\My Documents\Unreal Projects`.
 
@@ -387,7 +385,7 @@ Using other characters outside `a-z`, `A-Z`, and `0-9` such as `@`, `-`, `_`, `,
 
 
 
-## 2.2 Use A Top Level Folder For Project Specific Assets
+## 2.2 Use A Top Level Folder For Project Specific Assets {#2.2}
 
 All of a project's assets should exist in a folder named after the project. For example, if your project is named 'Generic Shooter', _all_ of it's content should exist in `Content/GenericShooter`.
 
@@ -403,7 +401,7 @@ Often in code style guides it is written that you should not pollute the global 
 Every asset should have a purpose, otherwise it does not belong in a project. If an asset is an experimental test and shouldn't be used by the project it should be put in a [`Developer`](#2.3) folder.
 
 
-### 2.2.2 Reduce Migration Conflicts
+### 2.2.2 Reduce Migration Conflicts {#2.2.2}
 
 When working on multiple projects it is common for a team to copy assets from one project to another if they have made something useful for both. When this occurs, the easiest way to perform the copy is to use the Content Browser's Migrate functionality as it will copy over not just the selected asset but all of its dependencies.
 
@@ -442,7 +440,7 @@ If your project plans to release DLC or has multiple sub-projects associated wit
 
 
 
-## 2.3 Use Developers Folder For Local Testing
+## 2.3 Use Developers Folder For Local Testing {#2.3}
 
 During a project's development, it is very common for team members to have a sort of 'sandbox' where they can experiment freely without risking the core project. Because this work may be ongoing, these team members may wish to put their assets on a project's source control server. Not all teams require use of Developer folders, but ones that do use them often run into a common problem with assets submitted to source control.
 
@@ -454,7 +452,7 @@ Once the assets are ready for use, an artist simply has to move the assets into 
 
 
 
-## 2.4 All Map[*](#terms-level-map) Files Belong In A Folder Called Maps
+## 2.4 All Map[*](#terms-level-map) Files Belong In A Folder Called Maps {#2.4}
 
 Map files are incredibly special and it is common for every project to have its own map naming system, especially if they work with sub-levels or streaming levels. No matter what system of map organization is in place for the specific project, all levels should belong in `/Content/Project/Maps`.
 
@@ -474,7 +472,7 @@ For example, if your project requires pickups that can be placed in a level, the
 
 
 
-## 2.6 Do Not Create Folders Called `Assets` or `AssetTypes`
+## 2.6 Do Not Create Folders Called `Assets` or `AssetTypes` {#2.6}
 
 
 ### 2.6.1 Creating a folder named `Assets` is redundant
@@ -506,7 +504,7 @@ For example, animations that are shared across multiple characters should lay in
 
 
 
-## 2.8 `MaterialLibrary`
+## 2.8 `MaterialLibrary` {#2.8}
 
 If your project makes use of master materials, layered materials, or any form of reusable materials or textures that do not belong to any subset of assets, these assets should be located in `Content/Project/MaterialLibrary`.
 
@@ -570,7 +568,7 @@ All non-boolean variable names must be clear, unambiguous, and descriptive nouns
 
 #### 3.2.1.2 PascalCase
 
-All non-boolean variables should be in the form of [PascalCase](#terms-cases).
+All non-boolean variables should be in the form of PascalCase.
 
 
 ##### 3.2.1.2e Examples
@@ -805,7 +803,7 @@ These questions and more can all be answered when functions are named appropriat
 
 
 
-### 3.3.1.1 All Functions Should Be Verbs
+### 3.3.1.1 All Functions Should Be Verbs {#bp-funcs-naming-verbs}
 
 All functions and events perform some form of action, whether its getting info, calculating data, or causing something to explode. Therefore, all functions should all start with verbs. They should be worded in the present tense whenever possible. They should also have some context as to what they are doing.
 
@@ -1075,7 +1073,7 @@ This section will focus on Niagara assets and their internals.
 
 ## 5.1 No Spaces, Ever
 
-As mentioned in [0 Identifiers](#0), spaces and all white space characters are forbidden in identifiers. This is especially true for Niagara systems as it makes working with things significantly harder if not impossible when working with HLSL or other means of scripting within Niagara and trying to reference an identifier.
+As mentioned in [0 Identifiers](#0), spaces and all whitespace characters are forbidden in identifiers. This is especially true for Niagara systems as it makes working with things significantly harder if not impossible when working with HLSL or other means of scripting within Niagara and trying to reference an identifier.
 
 
 
