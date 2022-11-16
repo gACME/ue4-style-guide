@@ -538,9 +538,7 @@ If you find that the content browser has an empty folder you can't delete, you s
 
 # 3. Blueprints
 
-This section will focus on Blueprint classes and their internals. When possible, style rules conform to [Epic's Coding Standard](https://docs.unrealengine.com/latest/INT/Programming/Development/CodingStandard).
-
-Remember: Blueprinting badly bears blunders, beware! (Phrase by [KorkuVeren](http://github.com/KorkuVeren))
+This section will focus on Blueprint classes and their internals. When possible, style rules conform to [Epic's Coding Standard](https://docs.unrealengine.com/4.27/en-US/ProductionPipelines/DevelopmentSetup/CodingStandard).
 
 
 
@@ -824,7 +822,7 @@ Good examples:
 * `GetCoordinates`
 * `UpdateTransforms`
 * `EnableBigHeadMode`
-* `IsEnemy` - ["Is" is a verb.](http://writingexplained.org/is-is-a-verb)
+* `IsEnemy`
 
 Bad examples:
 
@@ -856,9 +854,9 @@ Good examples:
 * `IsSpeaking`
 * `IsHavingAnExistentialCrisis`
 * `IsVisible`
-* `HasWeapon` - ["Has" is a verb.](http://grammar.yourdictionary.com/parts-of-speech/verbs/Helping-Verbs.html)
-* `WasCharging` - ["Was" is past-tense of "be".](http://grammar.yourdictionary.com/parts-of-speech/verbs/Helping-Verbs.html) Use "was" when referring to 'previous frame' or 'previous state'.
-* `CanReload` - ["Can" is a verb.](http://grammar.yourdictionary.com/parts-of-speech/verbs/Helping-Verbs.html)
+* `HasWeapon`
+* `WasCharging`
+* `CanReload`
 
 Bad examples:
 
@@ -1073,9 +1071,7 @@ This section will focus on Niagara assets and their internals.
 
 ## 5.1 No Spaces, Ever
 
-As mentioned in [00.1 Forbidden Identifiers](#00), spaces and all white space characters are forbidden in identifiers. This is especially true for Niagara systems as it makes working with things significantly harder if not impossible when working with HLSL or other means of scripting within Niagara and trying to reference an identifier.
-
-(Original Contribution by [@dunenkoff](https://github.com/Allar/ue5-style-guide/issues/58))
+As mentioned in [0 Identifiers](#0), spaces and all white space characters are forbidden in identifiers. This is especially true for Niagara systems as it makes working with things significantly harder if not impossible when working with HLSL or other means of scripting within Niagara and trying to reference an identifier.
 
 
 
