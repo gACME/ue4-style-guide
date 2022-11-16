@@ -867,13 +867,11 @@ Bad examples:
 
 
 
-### 3.3.1.4 Event Handlers and Dispatchers Should Start With `On`
+### 3.3.1.4 Event Handlers and Dispatchers
 
-Any function that handles an event or dispatches an event should start with `On` and continue to follow [the verb rule](#bp-funcs-naming-verbs). The verb may move to the end however if past-tense reads better.
+Event dispatches should start with `On` and continue to follow [the verb rule](#bp-funcs-naming-verbs). The verb may move to the end however if past-tense reads better.
 
 [Collocations](http://dictionary.cambridge.org/us/grammar/british-grammar/about-words-clauses-and-sentences/collocation) of the word `On` are exempt from following the verb rule.
-
-`Handle` is not allowed. It is 'Unreal' to use `On` instead of `Handle`, while other frameworks may prefer to use `Handle` instead of `On`.
 
 Good examples:
 
@@ -889,9 +887,15 @@ Bad examples:
 
 * `OnData`
 * `OnTarget`
+
+
+Any function that handles an event should start with `Handle` and continue to follow [the verb rule](#bp-funcs-naming-verbs), except when matching a collocation. The verb may move to the end however if past-tense reads better.
+
+Good examples:
+
+* `OnClicked`
 * `HandleMessage`
 * `HandleDeath`
-
 
 
 ### 3.3.1.5 Remote Procedure Calls Should Be Prefixed With Target
